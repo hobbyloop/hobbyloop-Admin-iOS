@@ -28,7 +28,14 @@ extension Project {
                 infoPlist: .default,
                 sources: ["Targets/\(name)/Sources/**"],
                 resources: [],
-                dependencies: [])
+                dependencies: [
+                    .external(name: "RxSwift"),
+                    .external(name: "RxCocoa"),
+                    .external(name: "ReactorKit"),
+                    .external(name: "SnapKit"),
+                    .external(name: "Then"),
+                    .external(name: "Alamofire")
+                ])
         let tests = Target(name: "\(name)Tests",
                 platform: platform,
                 product: .unitTests,
